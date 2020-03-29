@@ -43,6 +43,23 @@ These are the main data files which contain the gameplay events.
 - `type` - Media type of the game or video. Possible values are: 'Game', 'Assessment', 'Activity', 'Clip'.
 - `world` - The section of the application the game or video belongs to. Helpful to identify the educational curriculum goals of the media. Possible values are: 'NONE' (at the app's start screen), TREETOPCITY' (Length/Height), 'MAGMAPEAK' (Capacity/Displacement), 'CRYSTALCAVES' (Weight).
 
+<h3>specs.csv</h3>
+
+This file gives the specification of the various event types.
+
+- `event_id` - Global unique identifier for the event type. Joins to event_id column in events table.
+- `info` - Description of the event.
+- `args` - JSON formatted string of event arguments. Each argument contains:
+- `name` - Argument name.
+- `type` - Type of the argument (`string`, `int`, `number`, `object`, `array`).
+- `info` - Description of the argument.
+
+<h3>train_labels.csv</h3>
+
+This file demonstrates how to compute the ground truth for the assessments in the training set.
+
+
+
 
 
 
