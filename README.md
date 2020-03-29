@@ -25,6 +25,25 @@ In this competition, you are provided with game analytics for the PBS KIDS Measu
 The file train_labels.csv has been provided to show how these groups would be computed on the assessments in the training set. Assessment attempts are captured in `event_code` 4100 for all assessments except for Bird Measurer, which uses `event_code` 4110. If the attempt was correct, it contains `"correct":true`.
 </p>
 
+<h2 style="color:blue">Data</h2>
+
+<h3>train.csv & test.csv</h3>
+
+These are the main data files which contain the gameplay events.
+
+- `event_id` - Randomly generated unique identifier for the event type. Maps to event_id column in specs table.
+- `game_session` - Randomly generated unique identifier grouping events within a single game or video play session.
+- `timestamp` - Client-generated datetime
+- `event_data` - Semi-structured JSON formatted string containing the events parameters. Default fields are: `event_count`, `event_code`, and `game_time`; otherwise fields are determined by the event type.
+- `installation_id` - Randomly generated unique identifier grouping game sessions within a single installed application instance.
+- `event_count` - Incremental counter of events within a game session (offset at 1). Extracted from `event_data`.
+- `event_code` - Identifier of the event 'class'. Unique per game, but may be duplicated across games. E.g. event code '2000' always identifies the 'Start Game' event for all games. Extracted from `event_data`.
+- `game_time` - Time in milliseconds since the start of the game session. Extracted from `event_data`.
+- `title` - Title of the game or video.
+- `type` - Media type of the game or video. Possible values are: 'Game', 'Assessment', 'Activity', 'Clip'.
+- `world` - The section of the application the game or video belongs to. Helpful to identify the educational curriculum goals of the media. Possible values are: 'NONE' (at the app's start screen), TREETOPCITY' (Length/Height), 'MAGMAPEAK' (Capacity/Displacement), 'CRYSTALCAVES' (Weight).
+
+
 
 
 
