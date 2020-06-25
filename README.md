@@ -4,6 +4,9 @@
  
  <p><b>In this competition I got my first Kagge Medal (Silver)</b></b>
  
+ #### Private Leaderbord : 103/3497 top 3%
+ #### Public Leaderbord : 359/3497 
+ 
 <h2 style="color:blue">Discription</h2>
 
 <p>
@@ -58,6 +61,15 @@ This file gives the specification of the various event types.
 
 This file demonstrates how to compute the ground truth for the assessments in the training set.
 
+## Results
+
+| Model          | CV    | Public LB | Pravete LB|
+| :------------  |:-----:| -----:    | -----:    |
+| Ensamble       | 0.531 | 0.534     | 0.546     |
+| LGBM           | 0.564 | 0.528     | 0.554     |
+| CatBoost       | 0.550 | 0.514     | 0.532     |
+| XGB            | 0.512 | 0.519     | 0.526     |
+| NN             | 0.530 | 0.512     | 0.521     |
 
 
 
